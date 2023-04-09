@@ -11,9 +11,8 @@ player.on(
     localStorage.setItem(STORAGE_KEY, time.seconds);
   }, 1000)
 );
-console.log(
-  player.setCurrentTime(JSON.parse(localStorage.getItem(STORAGE_KEY)))
-);
+
+player.setCurrentTime(JSON.parse(localStorage.getItem(STORAGE_KEY)));
 
 player.getVideoTitle().then(function (title) {
   console.log('title:', title);
