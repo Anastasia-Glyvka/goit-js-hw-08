@@ -11,10 +11,17 @@ form.addEventListener('submit', onSubmit);
 populateTextarea();
 
 function onSubmit(evt) {
+  console.log(form.elements);
   evt.preventDefault();
-  console.log(
-    `email: ${form.elements.email.value}, message: ${form.elements.message.value}`
-  );
+  if (form.elements.email.value === '' || form.elements.message.value === '') {
+    alert('Введіть дані');
+  } else {
+    const data = {
+      email: form.elements.email.value,
+      message: form.elements.message.value,
+    };
+    console.log(data);
+  }
 
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
